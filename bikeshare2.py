@@ -8,6 +8,9 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'washington': 'washington.csv' }
 
 
+''' The next part of the script will prompt the user which city, month, and day they would like to explore. 
+To do this, a function was created to act as a data filter based on the users input. 
+This is followed by a function to load the selected data. '''
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze. Be sure to make the input .lower()

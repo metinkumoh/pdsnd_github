@@ -146,16 +146,26 @@ def trip_duration_stats(df):
     print('-'*40)
     
 # Compute user info
-def user_info(df,city):
-    """Displays information on bikeshare users."""
+def user_info(df, city):
+    """
+    Displays information on bikeshare users.
+    Refactored user information display for better readability.
+    """
 
     print('\nCalculating User info...:')
     start_time = time.time()
 
-    print('Counts of each user type:', df['User Type'].value_counts())
+    # Display user type counts
+    print('Counts of each user type:')
+    print(df['User Type'].value_counts())
+
     if 'Gender' in df:
-        print('Counts of each gender:', df['Gender'].value_counts())
+        # Display gender counts
+        print('Counts of each gender:')
+        print(df['Gender'].value_counts())
+        
     if 'Birth Year' in df:
+        # Display birth year information
         print('Earliest year of birth:', int(df['Birth Year'].min()))
         print('Most recent year of birth:', int(df['Birth Year'].max()))
         print('Most common year of birth:', int(df['Birth Year'].mode()[0]))

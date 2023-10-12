@@ -21,34 +21,31 @@ def get_filters():
     
     
     #get user input for city (chicago, new york city, washington).
-    while True:
-        city = input("Select City: Chicago, New York City,Washington: ").lower()
-        if city not in ['chicago', 'new york city', 'washington']:
-            print("Sorry, I didn't catch that. Try again.")
-            continue
-        else:
-            break
-    
-    # get user input for month (all, january, february, ... , june)
-    while True:
-        month = input("Select month: All, January, February, March, April, May, or June: ").lower()
-        if month not in ['all', 'january', 'february', 'march', 'april', 'may', 'june']:
-            print("Sorry, I didn't catch that. Try again.")
-            continue
-        else:
-            break
+    city_options = ['chicago', 'new york city', 'washington']
+    city_input = input("Select City: Chicago, New York City,Washington: ").lower()
 
-    # get user input for day of week (all, monday, tuesday, ... sunday)
-    while True:
-        day = input("Select Day: All, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday: ").lower()
-        if day not in ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']:
-            print("Sorry, I didn't catch that. Try again.")
-            continue
-        else:
-            break
+    while city_input not in city_options:
+        print("Sorry, I didn't catch that. Try again.")
+        city_input = input("Select City: Chicago, New York City,Washington: ").lower()
+
+    # Get user input for month (all, january, february, ... , june)
+    month_options = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
+    month_input = input("Select month: All, January, February, March, April, May, or June: ").lower()
+
+    while month_input not in month_options:
+        print("Sorry, I didn't catch that. Try again.")
+        month_input = input("Select month: All, January, February, March, April, May, or June: ").lower()
+
+    # Get user input for day of week (all, monday, tuesday, ... sunday)
+    day_options = ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+    day_input = input("Select Day: All, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday: ").lower()
+
+    while day_input not in day_options:
+        print("Sorry, I didn't catch that. Try again.")
+        day_input = input("Select Day: All, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday: ").lower()
     
     print('-'*40)
-    return city, month, day
+    return city_input, month_input, day_input
 
    
 def load_data(city, month, day):
